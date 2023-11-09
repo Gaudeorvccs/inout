@@ -20,7 +20,7 @@ class FileReaderDemo {
         BufferedReader reader = null;
 
         // FileInputStream reads bytes from {fileName}.
-        // InputStreamReader converts the bites to characters
+        // InputStreamReader converts the bytes to characters.
         // BufferedReader supplies the readLine() method for outputting each line.
         try {
             reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
@@ -33,5 +33,9 @@ class FileReaderDemo {
         while ((line = reader.readLine()) != null) {
             System.out.println(line);
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+        readFromFile("sample.txt");
     }
 }
