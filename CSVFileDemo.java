@@ -16,7 +16,7 @@
  *	Test your methods by creating a small CSV file and then reading from it.
 
 
- * Description: 
+ * Description: Reads and writes to csv files
  * 
  * -------
  * Methods
