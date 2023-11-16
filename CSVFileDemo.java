@@ -31,15 +31,12 @@
  *      reads a CSV file and outputs the contents to the terminal
  */
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList; // import the ArrayList class
 
 public class CSVFileDemo {
 
@@ -60,6 +57,7 @@ public class CSVFileDemo {
     }
 
     // by Retrowes, from FileReaderDemo, adapted by Gaudy to return the lines
+    // can throw an IOException if readLine returns can't read the line.
     public static String[] getCSVLines(String fileName) throws IOException {
 
         BufferedReader reader = null;
@@ -70,7 +68,8 @@ public class CSVFileDemo {
         try {
             reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e);
+            System.out.println("ERROR: Invalid filepath!");
         }
 
         // {line} will be printed until {reader} is empty.
@@ -102,7 +101,8 @@ public class CSVFileDemo {
                 System.out.println(Arrays.toString(lineArr));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e);
+            System.out.println("ERROR: Reading the line failed! Invalid file contents!");
         }
     }
 
