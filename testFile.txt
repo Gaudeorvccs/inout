@@ -1,0 +1,7 @@
+ID   Name           Role           Salary         
+-----------------------------------------
+1    Alice Smith    Developer      $80000         
+2    Bob Johnson    Manager        $95000         
+3    Charlie Lee    Analyst        $70000         
+-----------------------------------------
+Generated on: 2023-11-28 07:42:29 PM
