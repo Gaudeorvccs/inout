@@ -35,7 +35,7 @@ class ReportGenerator{
             for(int column = 0; column < data.get(row).length; column++){       // Iterates through all columns of a row.
                 int columnWidth = column > 0 ? -15 : -5;                        // Change column width depending on
                 String formatSpecifier = "%" + columnWidth + "s";               // Flexible format specifier.
-                printWriter.printf(formatSpecifier, data.get(row)[column]);     // Prints the data in the cell at the row-column intersection along with a tab.
+                printWriter.printf(formatSpecifier, data.get(row)[column]);     // Prints the data in the cell at the row-column intersection.
             }
             printWriter.println();                                              // A line will separate each row.
             if(row == 0) {printWriter.println(dashedLine);}                     // Separates header from body.
