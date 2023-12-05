@@ -1,2 +1,1 @@
-This is sample content
-This is appended content
+ This is sample content
