@@ -26,7 +26,7 @@ class ReportGenerator{
         PrintWriter printWriter = null;                                         // Instantiates a PrintWriter.
         String dashedLine = "-----------------------------------------";        // Used to separate the grid into a header, body, and footer. 
 
-        try{ printWriter = new PrintWriter(fileName);}                          // Attempt to assign {printWriter} with {fileName}'s output stream} 
+        try {printWriter = new PrintWriter(fileName);}                          // Attempt to assign {printWriter} with {fileName}'s output stream} 
         catch(FileNotFoundException e){
             System.out.print("ERROR: Could not write to the specifiedfile!");
         }

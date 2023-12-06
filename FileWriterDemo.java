@@ -1,22 +1,31 @@
 import java.io.FileWriter;
 import java.io.File;
+import java.io.IOException;
+
 class FileWriterDemo {
-    public static void writeToFile(String fileName, String Str) {
+    public static void writeToFile(String fileName, String Str) throws IOException {
+        File thisFile = null;
+        FileWriter thisFileWriter = null;
+
         try {
-            File thisFile = new File(fileName);
-            FileWriter thisFileWriter = new FileWriter(thisFile);
+            thisFile = new File(fileName);
+            thisFileWriter = new FileWriter(thisFile);
             thisFileWriter.write(Str);
-            thisFileWriter.close();
         }
-        catch (Exception e) {
-            e.getStackTrace();
+        catch (IOException e) {
+            System.out.println(e);
+            System.out.println("ERROR: Invalid input!");
+            return;
+        }
+        finally{
+            if(thisFile != null){thisFileWriter.close();}
         }
 
+        // System.out.printf("Content written to <%s> successfully.", fileName);
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String fileName = "sample.txt";
-        String sampleContent = "This is sample content";
+        String sampleContent = " This is sample content";
         writeToFile(fileName,sampleContent);
-        System.out.println("Content written to file successfully.");
     }
 }
