@@ -12,17 +12,18 @@ class FileWriterDemo {
             thisFileWriter = new FileWriter(thisFile);
             thisFileWriter.write(Str);
         } catch (IOException e) {
-            System.out.println(e);
-            System.out.println("ERROR: Invalid input!");
+            System.out.println(e); // Error writing to file: [error message].
+            System.out.println("Error writing to file: Invalid input!");
             return;
         } finally {
             // catch any errors preventing closing the file and alert the user.
             try {
                 if (thisFile != null) {
                     thisFileWriter.close();
+                    System.out.println("File closed successfully.");
                 }
             } catch (IOException e) {
-                System.out.println("Error occured attempting to close File access!");
+                System.out.println("Error writing to file: Error occured attempting to close File access!");
             }
 
         }
