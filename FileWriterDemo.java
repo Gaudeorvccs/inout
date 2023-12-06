@@ -21,7 +21,7 @@ class FileWriterDemo {
                 if (thisFile != null) {
                     thisFileWriter.close();
                 }
-            } catch (Exception e) {
+            } catch (IOException e) {
                 System.out.println("Error occured attempting to close File access!");
             }
 
