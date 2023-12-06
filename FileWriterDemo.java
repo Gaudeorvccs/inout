@@ -11,18 +11,17 @@ class FileWriterDemo {
             thisFile = new File(fileName);
             thisFileWriter = new FileWriter(thisFile);
             thisFileWriter.write(Str);
-            System.out.printf("Content written to <%s> successfully.", fileName);
         }
         catch (IOException e) {
             System.out.println(e);
             System.out.println("ERROR: Invalid input!");
+            return;
         }
         finally{
-            if(thisFile != null){
-                thisFileWriter.close();
-            }
+            if(thisFile != null){thisFileWriter.close();}
         }
 
+        // System.out.printf("Content written to <%s> successfully.", fileName);
     }
     public static void main(String[] args) throws IOException {
         String fileName = "sample.txt";
