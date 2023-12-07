@@ -1,9 +1,16 @@
 import java.io.FileWriter;
 import java.io.File;
 import java.io.IOException;
+import java.lang.Exception;
 
-class FileWriterDemo {
-    public static void writeToFile(String fileName, String Str) throws IOException {
+class FileWriteException extends Exception {
+    public FileWriteException(String ErrorMsg) {
+        System.out.println("Failed to write to file due to and error: \n" + ErrorMsg);
+    }
+}
+
+class FileWriter2 {
+    public static void writeToFile(String fileName, String Str) throws FileWriteException {
         File thisFile = null;
         FileWriter thisFileWriter = null;
 
@@ -12,9 +19,7 @@ class FileWriterDemo {
             thisFileWriter = new FileWriter(thisFile);
             thisFileWriter.write(Str);
         } catch (IOException e) {
-            System.out.println(e); // Error writing to file: [error message].
-            System.out.println("Error writing to file: Invalid input!");
-            return;
+            throw new FileWriteException("Invalid input!");
         } finally {
             // catch any errors preventing closing the file and alert the user.
             try {
@@ -31,9 +36,13 @@ class FileWriterDemo {
         // System.out.printf("Content written to <%s> successfully.", fileName);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         String fileName = "sample.txt";
         String sampleContent = " This is sample content";
-        writeToFile(fileName, sampleContent);
+        try {
+            writeToFile(fileName, sampleContent);
+        } catch (FileWriteException e) {
+            System.out.println("Program Terminated.");
+        }
     }
 }
