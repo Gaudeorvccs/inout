@@ -76,7 +76,7 @@ public class CSVFileDemo {
         } catch (NullPointerException e) {
             System.out.println("Error encountered with the CSV file: FileName argument is null.");
         } catch (IOException e) {
-            System.out.println("IO error encountered with the CSV file: Cannot open file. ");
+            System.out.println("IO error encountered with the CSV file: Cannot edit file. ");
         }
     }
 
